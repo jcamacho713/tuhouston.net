@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jcamacho713.github.io/tuhouston.net/sitemap.xml
