@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saw or Heard Our Commercial? | Claim Your Free Offer</title>
+<meta name="description" content="You heard us on the radio or saw our commercial — fill out the quick form and we'll be in touch.">
+
+<style>
+  :root{
+    --brand:#1565c0;        /* primary brand color — change to your brand */
+    --brand-dark:#0a1f44;
+    --accent:#ffb300;
+    --text:#16213a;
+    --text-light:#5b6680;
+    --bg:#f4f8ff;
+    --card:#ffffff;
+    --border:#e2e8f5;
+    --radius:16px;
+    --font:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6}
+  .container{max-width:1080px;margin:0 auto;padding:0 20px}
+  a{color:var(--brand);text-decoration:none}
+  .btn{display:inline-block;font-weight:700;border:none;border-radius:50px;
+    padding:15px 30px;font-size:1rem;cursor:pointer;transition:.2s;font-family:var(--font)}
+  .btn-primary{background:linear-gradient(135deg,var(--brand-dark),var(--brand));color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(21,101,192,.35)}
+  .btn-outline{background:transparent;border:2px solid #fff;color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+  .btn-block{width:100%;text-align:center}
+
+  /* HEADER */
+  header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-weight:800;font-size:1.3rem;color:var(--brand-dark);letter-spacing:-.5px}
+  .logo span{color:var(--brand)}
+  .nav .btn{padding:11px 22px;font-size:.92rem}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,var(--brand-dark),var(--brand));color:#fff;padding:70px 0 90px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+  .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+    padding:7px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:20px}
+  .hero h1{font-size:2.8rem;line-height:1.1;font-weight:800;margin-bottom:18px;letter-spacing:-1px}
+  .hero p.lead{font-size:1.1rem;opacity:.92;margin-bottom:28px;max-width:520px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .stats{display:flex;gap:32px;flex-wrap:wrap}
+  .stats .num{font-size:1.7rem;font-weight:800}
+  .stats .lbl{font-size:.82rem;opacity:.8}
+
+  /* FORM CARD */
+  .form-card{background:var(--card);color:var(--text);border-radius:var(--radius);
+    padding:34px 30px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+  .form-card h2{font-size:1.5rem;color:var(--brand-dark);margin-bottom:6px}
+  .form-card .sub{font-size:.92rem;color:var(--text-light);margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--brand-dark)}
+  .field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--border);
+    border-radius:10px;font-size:.95rem;font-family:var(--font);background:#fbfcff;transition:.15s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand);
+    box-shadow:0 0 0 3px rgba(21,101,192,.12);background:#fff}
+  .field textarea{resize:vertical;min-height:80px}
+  .privacy{font-size:.75rem;color:var(--text-light);text-align:center;margin-top:12px}
+
+  /* SECTIONS */
+  section.block{padding:70px 0}
+  .section-head{text-align:center;max-width:600px;margin:0 auto 46px}
+  .section-label{color:var(--brand);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+  .section-head h2{font-size:2rem;color:var(--brand-dark);margin:8px 0 10px;letter-spacing:-.5px}
+  .section-head p{color:var(--text-light)}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;text-align:center}
+  .card .ico{font-size:2rem;margin-bottom:10px}
+  .card h3{font-size:1.05rem;color:var(--brand-dark);margin-bottom:6px}
+  .card p{font-size:.88rem;color:var(--text-light)}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px 26px}
+  .step .n{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand-dark),var(--brand));
+    color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .step h3{color:var(--brand-dark);margin-bottom:6px}
+  .step p{font-size:.92rem;color:var(--text-light)}
+
+  /* CTA BANNER */
+  .cta{background:linear-gradient(135deg,var(--brand-dark),var(--brand));color:#fff;text-align:center;padding:64px 0}
+  .cta h2{font-size:2rem;margin-bottom:12px}
+  .cta p{opacity:.9;margin-bottom:26px}
+
+  /* FOOTER */
+  footer{background:#0a1326;color:#aebbd6;padding:34px 0;text-align:center;font-size:.88rem}
+  footer a{color:#cdd9f2}
+
+  /* SUCCESS */
+  #success{display:none;text-align:center;padding:24px 0}
+  #success .em{font-size:3rem;margin-bottom:12px}
+  #success h2{color:var(--brand-dark);margin-bottom:8px}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero h1{font-size:2.2rem}
+    .cards{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr}
+  }
+  @media(max-width:520px){
+    .cards{grid-template-columns:1fr}
+    .nav .btn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container nav">
+    <div class="logo">Your<span>Brand</span></div>
+    <a href="#form" class="btn btn-primary">Claim My Offer</a>
+  </div>
+</header>
+
+<!-- ================= HERO + FORM ================= -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">📺 You heard us. You saw us. Welcome!</div>
+      <h1>Saw or Heard Our Commercial?</h1>
+      <p class="lead">You came to the right place. Fill out the quick form and a real member of our team will reach out to you personally — usually within one business day.</p>
+      <div class="hero-cta">
+        <a href="#form" class="btn btn-primary">Get Started →</a>
+        <a href="tel:" class="btn btn-outline">📞 Call Us</a>
+      </div>
+      <div class="stats">
+        <div><div class="num">1,000+</div><div class="lbl">Happy Customers</div></div>
+        <div><div class="num">24 hr</div><div class="lbl">Response Time</div></div>
+        <div><div class="num">100%</div><div class="lbl">Free, No Pressure</div></div>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="form-card" id="form">
+      <h2>Get Your Free Offer</h2>
+      <p class="sub">Tell us a little about you and we'll take it from there.</p>
+
+      <!--
+        ============================================================
+        FORM DELIVERY — leave the email blank for now.
+        When ready, replace YOUR_EMAIL_HERE in the action below with
+        the email address you want submissions sent to. Example:
+        action="https://formsubmit.co/leads@yourbusiness.com"
+        (First real submission triggers a one-time confirmation email
+        from FormSubmit — click the link in it to activate.)
+        ============================================================
+      -->
+      <form id="leadForm" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="New Lead — Commercial Landing Page">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="field">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="Name" placeholder="Jane Smith" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone *</label>
+          <input type="tel" id="phone" name="Phone" placeholder="(555) 555-0000" required>
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="Email" placeholder="you@email.com" required>
+        </div>
+        <div class="field">
+          <label for="heard">Where did you see or hear us? *</label>
+          <select id="heard" name="Heard From" required>
+            <option value="">Select one</option>
+            <option>TV Commercial</option>
+            <option>Radio Ad</option>
+            <option>Streaming / Online Video</option>
+            <option>Billboard</option>
+            <option>Podcast</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">What can we help you with?</label>
+          <textarea id="message" name="Message" placeholder="Tell us a bit about what you're looking for (optional)."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Claim My Free Offer →</button>
+        <p class="privacy">🔒 We respect your privacy. Your info is only used to contact you.</p>
+      </form>
+
+      <!-- Success state -->
+      <div id="success">
+        <div class="em">🎉</div>
+        <h2>You're All Set!</h2>
+        <p>Thanks for reaching out. A member of our team will contact you within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Why Choose Us</span>
+      <h2>The Team Behind the Commercial</h2>
+      <p>Here's what you get when you reach out today.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ico">⚡</div><h3>Fast Response</h3><p>A real person reaches out within one business day — no bots, no runaround.</p></div>
+      <div class="card"><div class="ico">🎯</div><h3>No Pressure</h3><p>A friendly conversation about what you need. No obligation, ever.</p></div>
+      <div class="card"><div class="ico">⭐</div><h3>Trusted</h3><p>Thousands of happy customers and a reputation we're proud of.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>Real People</h3><p>Talk to someone local who actually cares about helping you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="block" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">How It Works</span>
+      <h2>Three Simple Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Fill Out the Form</h3><p>Takes less than a minute. Just your name, contact info, and what you need.</p></div>
+      <div class="step"><div class="n">2</div><h3>We Reach Out</h3><p>A real member of our team contacts you within one business day.</p></div>
+      <div class="step"><div class="n">3</div><h3>Get Started</h3><p>We walk you through the next steps and get you taken care of.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="container">
+    <h2>Don't Let This Moment Pass</h2>
+    <p>You took the first step by visiting. Let's take the next one together.</p>
+    <a href="#form" class="btn btn-primary">Claim My Free Offer →</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Your Brand. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('leadForm').addEventListener('submit', async function(e){
+    var action = this.getAttribute('action');
+    // If the email hasn't been set yet, don't actually submit — just show success preview.
+    if (action.indexOf('YOUR_EMAIL_HERE') !== -1){
+      e.preventDefault();
+      showSuccess(this);
+      console.warn('Form email not set yet. Replace YOUR_EMAIL_HERE in the form action to start receiving submissions.');
+      return;
+    }
+    // Otherwise submit via fetch so we can show an inline thank-you (no page redirect).
+    e.preventDefault();
+    var btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    try{
+      var res = await fetch(action, { method:'POST', body:new FormData(this), headers:{'Accept':'application/json'} });
+      if(res.ok){ showSuccess(this); }
+      else { throw new Error('bad response'); }
+    }catch(err){
+      btn.textContent = 'Claim My Free Offer →'; btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
+  });
+
+  function showSuccess(form){
+    form.style.display = 'none';
+    var card = form.closest('.form-card');
+    card.querySelector('h2').style.display = 'none';
+    card.querySelector('.sub').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
