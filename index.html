@@ -78,7 +78,7 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
   .brand{display:flex;align-items:center;gap:14px}
   .brand img{height:46px;width:auto;display:block;background:#fff;border-radius:8px;padding:4px}
-  .brand .wordmark{font-weight:800;font-size:1.35rem;color:#fff;letter-spacing:-.5px}
+  .brand .wordmark{font-weight:800;font-size:1.35rem;color:#fff;letter-spacing:-.5px;text-decoration:none;white-space:nowrap}
   .brand .wordmark span{color:var(--teal)}
   .nav .btn{padding:12px 24px;font-size:.9rem}
 
@@ -94,7 +94,7 @@
   .hero h1{font-size:3rem;line-height:1.08;font-weight:800;margin-bottom:20px;letter-spacing:-1.2px}
   .hero h1 em{font-style:normal;color:var(--teal)}
   .hero p.lead{font-size:1.14rem;color:rgba(255,255,255,.85);margin-bottom:26px;max-width:540px}
-  .hero-domain{font-size:1.5rem;font-weight:800;color:var(--teal);letter-spacing:.5px}
+  .hero-domain{display:inline-block;font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.5px;text-decoration:none}
 
   /* FORM CARD */
   .form-card{background:var(--card);color:var(--text);border-radius:var(--radius);
@@ -165,12 +165,16 @@
   .card p{font-size:.92rem;color:var(--text-light)}
 
   /* STATIONS / SOCIAL */
-  .stations{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stations{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
   .station{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--teal);
     border-radius:var(--radius);padding:28px 20px;text-align:center}
   .station h3{color:var(--navy);font-size:1.08rem;margin-bottom:6px}
   .station h3 a{color:var(--navy);text-decoration:none;transition:.2s}
   .station h3 a:hover{color:var(--accent-2)}
+  .station-logo{display:flex;align-items:center;justify-content:center;height:72px;width:100%;
+    background:#fff;border:1px solid var(--border);border-radius:10px;margin-top:14px;padding:8px;transition:.2s}
+  .station-logo:hover{border-color:var(--accent-2);transform:translateY(-2px)}
+  .station-logo img{max-height:100%;max-width:100%;width:auto;object-fit:contain;display:block}
   .station .dial{color:var(--text-light);font-size:.82rem;margin-bottom:16px}
   .social-row{display:flex;justify-content:center;gap:12px}
   .social-row a{width:44px;height:44px;border-radius:50%;background:var(--navy);
@@ -189,7 +193,7 @@
 
   /* FOOTER */
   footer{background:#06112c;color:#9fb0d0;padding:46px 0;text-align:center;font-size:.9rem}
-  footer .fl{font-weight:800;font-size:1.25rem;color:#fff}
+  footer .fl{display:inline-block;font-weight:800;font-size:1.25rem;color:#fff;text-decoration:none}
   footer .fl span{color:var(--teal)}
   footer .foot-logos{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;margin:18px 0 14px}
   footer .foot-logos img{height:50px;width:auto;background:#fff;border-radius:8px;padding:6px}
@@ -199,7 +203,7 @@
   #success h2{color:var(--navy);margin-bottom:8px}
 
   /* Gradient text accents (orange/pink) */
-  .eyebrow,.hero h1 em,.hero-domain,.statband .num,.section-label,
+  .eyebrow,.hero h1 em,.hero-domain span,.statband .num,.section-label,
   .brand .wordmark span,footer .fl span{
     background:var(--grad);
     -webkit-background-clip:text;background-clip:text;
@@ -229,7 +233,7 @@
   <div class="container nav">
     <div class="brand">
       <img src="univision_houston_logo.jpeg" alt="Univision Houston" onerror="this.remove()">
-      <span class="wordmark">tuhouston<span>.net</span></span>
+      <a href="https://corporate.televisaunivision.com/" target="_blank" rel="noopener" class="wordmark"><span>TU</span>HOUSTON.NET</a>
     </div>
     <a href="tel:+17133012606" class="btn btn-teal">Give Us a Call</a>
   </div>
@@ -243,7 +247,7 @@
       <span class="eyebrow">Saw us on Channel 45? Heard us on the radio?</span>
       <h1>We Get <em>Hispanics</em>.<br>And We Get Houston.</h1>
       <p class="lead">Tu Houston, part of <strong>TelevisaUnivision</strong>, the world's leading Spanish-language media company, connects your brand to the heart of the Houston Hispanic community across television, radio, concerts, community, digital, and social. Fill out the form and our team will reach out within one business day.</p>
-      <div class="hero-domain">tuhouston.net</div>
+      <a href="https://corporate.televisaunivision.com/" target="_blank" rel="noopener" class="hero-domain"><span>TU</span>HOUSTON.NET</a>
     </div>
 
     <!-- LEAD FORM -->
@@ -356,9 +360,9 @@
       <span class="section-label">Who We Are</span>
       <h2>The Voice Houston Trusts</h2>
     </div>
-    <p>Tu Houston is more than a station. We're the soundtrack of the morning commute, the stage at the city's biggest concerts, and the familiar face at the community events that bring Houston together, all backed by the reach of <strong>TelevisaUnivision</strong>.</p>
-    <p>Brands don't just advertise with us. <strong>They grow with us.</strong> From local family businesses to national names, companies come to Tu Houston because we don't just buy ads, we build relationships between your brand and the people who matter most: the vibrant, loyal Houston Hispanic community.</p>
-    <p>When you partner with us, your message reaches people <strong>where they live, listen, celebrate, and scroll</strong>, across five powerful channels that work together.</p>
+    <p>Tu Houston is more than a station. We're the picture on the television screen, the soundtrack of the morning commute, the stage at the city's biggest concerts, and the familiar face at the community events that bring Houston together, all backed by the reach of <strong>TelevisaUnivision</strong>.</p>
+    <p>Brands don't just reach Houston with us. <strong>They grow with us.</strong> From local family businesses to national names, companies come to Tu Houston because we build real relationships between your brand and the people who matter most: the vibrant, loyal Houston Hispanic community.</p>
+    <p>When you partner with us, your brand reaches people <strong>where they watch, listen, celebrate, and scroll</strong>, across six powerful channels that work together.</p>
   </div>
 </section>
 
@@ -375,7 +379,7 @@
       <div class="pillar"><h3>Radio</h3><p>On-air every day, in the cars, kitchens, and businesses of Houston.</p></div>
       <div class="pillar"><h3>Concerts</h3><p>Front and center at the live concerts and events that draw thousands.</p></div>
       <div class="pillar"><h3>Community</h3><p>Boots on the ground at festivals, fundraisers, and neighborhood events.</p></div>
-      <div class="pillar"><h3>Digital</h3><p>Web and targeted online ads, plus streaming on <a href="https://vix-univision.com/" target="_blank" rel="noopener">ViX</a>, the home of Spanish-language streaming.</p></div>
+      <div class="pillar"><h3>Digital</h3><p>Web, social video, and streaming on <a href="https://vix-univision.com/" target="_blank" rel="noopener">ViX</a>, the home of Spanish-language streaming.</p></div>
       <div class="pillar"><h3>Social</h3><p>Engaged followers and creators who share, comment, and show up.</p></div>
     </div>
   </div>
@@ -386,7 +390,7 @@
   <div class="container">
     <div class="section-head">
       <span class="section-label">Why Brands Choose Tu Houston</span>
-      <h2>We Build Brands, Not Just Buy Ads</h2>
+      <h2>We Build Brands Houston Believes In</h2>
     </div>
     <div class="cards">
       <div class="card"><h3>A Trusted Voice</h3><p>Our audience doesn't skip past us. They trust us. When we talk about your brand, they listen.</p></div>
@@ -409,21 +413,41 @@
       <div class="station">
         <h3><a href="https://www.facebook.com/1065Amor" target="_blank" rel="noopener">Amor 106.5</a></h3>
         <div class="dial">FM 106.5</div>
+        <a class="station-logo" href="https://www.instagram.com/amorhouston/" target="_blank" rel="noopener" aria-label="Amor 106.5 on Instagram">
+          <img src="amor-1065.png" alt="Amor 106.5" onerror="this.closest('.station-logo').remove()">
+        </a>
       </div>
 
       <div class="station">
         <h3><a href="https://www.facebook.com/1029Houston" target="_blank" rel="noopener">Qué Buena 102.9</a></h3>
         <div class="dial">FM 102.9</div>
+        <a class="station-logo" href="https://www.instagram.com/1029houston/" target="_blank" rel="noopener" aria-label="Qué Buena 102.9 on Instagram">
+          <img src="quebuena-1029.png" alt="Qué Buena 102.9" onerror="this.closest('.station-logo').remove()">
+        </a>
       </div>
 
       <div class="station">
-        <h3><a href="https://www.facebook.com/TUDNHouston" target="_blank" rel="noopener">TUDN Houston</a></h3>
+        <h3><a href="https://www.facebook.com/estereolatino933" target="_blank" rel="noopener">Estéreo Latino 93.3</a></h3>
         <div class="dial">FM 93.3</div>
+        <a class="station-logo" href="https://www.instagram.com/estereolatino933/" target="_blank" rel="noopener" aria-label="Estéreo Latino 93.3 on Instagram">
+          <img src="estereolatino-933.png" alt="Estéreo Latino 93.3" onerror="this.closest('.station-logo').remove()">
+        </a>
       </div>
 
       <div class="station">
         <h3><a href="https://www.facebook.com/LatinoMixHouston/" target="_blank" rel="noopener">Latino Mix Houston</a></h3>
         <div class="dial">FM 104.9</div>
+        <a class="station-logo" href="https://www.instagram.com/latinomixhouston/" target="_blank" rel="noopener" aria-label="Latino Mix Houston on Instagram">
+          <img src="latinomix-1049.png" alt="Latino Mix 104.9" onerror="this.closest('.station-logo').remove()">
+        </a>
+      </div>
+
+      <div class="station">
+        <h3><a href="https://www.facebook.com/TUDNHouston" target="_blank" rel="noopener">TUDN Houston</a></h3>
+        <div class="dial">FM 102.9 HD2</div>
+        <a class="station-logo" href="https://www.instagram.com/tudnhouston/" target="_blank" rel="noopener" aria-label="TUDN Houston on Instagram">
+          <img src="tudn-1029hd2.png" alt="TUDN 102.9 HD2" onerror="this.closest('.station-logo').remove()">
+        </a>
       </div>
 
     </div>
@@ -442,7 +466,7 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
-    <div class="fl">tuhouston<span>.net</span></div>
+    <a href="https://corporate.televisaunivision.com/" target="_blank" rel="noopener" class="fl"><span>TU</span>HOUSTON.NET</a>
     <div class="foot-logos">
       <img src="univision_houston_logo.jpeg" alt="Univision Houston" onerror="this.remove()">
       <img src="televisaunivision-logo.png" alt="TelevisaUnivision" onerror="this.remove()">
